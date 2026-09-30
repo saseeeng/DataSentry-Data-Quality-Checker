@@ -1,0 +1,16 @@
+# Python
+server/.venv/
+server/__pycache__/
+server/.pytest_cache/
+
+# Secrets
+.env
+server/.env
+
+# React
+client/node_modules/
+client/dist/
+
+# Generated files
+uploads/
+reports/
