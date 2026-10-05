@@ -20,7 +20,7 @@ export default function IssueTable({ issues }) {
             </div>
             <span className="text-sm">{issue.column}</span>
             <span className={`w-fit rounded-full px-2.5 py-1 text-xs ${
-              issue.severity === 'High' ? 'bg-red-50 text-red-700' : 'bg-amber-50 text-amber-800'
+              issue.severity === 'high' ? 'bg-red-50 text-red-700' : 'bg-amber-50 text-amber-800'
             }`}>{issue.severity}</span>
             <span className="text-sm text-[#68756b]">{issue.fix}</span>
           </div>
