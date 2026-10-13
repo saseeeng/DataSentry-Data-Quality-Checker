@@ -1,12 +1,10 @@
 from datetime import datetime
 
 from sqlalchemy import DateTime, Float, ForeignKey, Integer, JSON, String, Text, func
-from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
 
-JSON_CONFIG = JSON().with_variant(JSONB, "postgresql")
 
 
 class Scan(Base):
@@ -70,6 +68,6 @@ class ValidationRule(Base):
     name: Mapped[str] = mapped_column(String(120))
     column_name: Mapped[str] = mapped_column(String(255))
     rule_type: Mapped[str] = mapped_column(String(50))
-    rule_config: Mapped[dict] = mapped_column(JSON_CONFIG, default=dict)
+    rule_config: Mapped[dict] = mapped_column(JSON, default=dict)
     severity: Mapped[str] = mapped_column(String(20), default="medium")
     is_active: Mapped[bool] = mapped_column(default=True)

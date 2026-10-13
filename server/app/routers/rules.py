@@ -7,6 +7,49 @@ from app.schemas import RuleCreate, RuleOut, RuleUpdate
 
 router = APIRouter(prefix="/api/rules", tags=["rules"])
 
+DEFAULT_PRESET_RULES = [
+    {
+        "name": "Customer ID Required",
+        "column_name": "customer_id",
+        "rule_type": "required",
+        "rule_config": {},
+        "severity": "high",
+        "is_active": True,
+    },
+    {
+        "name": "Customer ID Must Be Unique",
+        "column_name": "customer_id",
+        "rule_type": "unique",
+        "rule_config": {},
+        "severity": "high",
+        "is_active": True,
+    },
+    {
+        "name": "Customer Email Format Validation",
+        "column_name": "email",
+        "rule_type": "email",
+        "rule_config": {},
+        "severity": "high",
+        "is_active": True,
+    },
+    {
+        "name": "Subscription Tier Allowed Values",
+        "column_name": "subscription_tier",
+        "rule_type": "allowed_values",
+        "rule_config": {"values": ["Basic", "Standard", "Premium", "Enterprise"]},
+        "severity": "medium",
+        "is_active": True,
+    },
+    {
+        "name": "Payment Status Allowed Values",
+        "column_name": "payment_status",
+        "rule_type": "allowed_values",
+        "rule_config": {"values": ["completed", "pending", "failed", "refunded"]},
+        "severity": "medium",
+        "is_active": True,
+    },
+]
+
 
 @router.get("", response_model=list[RuleOut])
 def list_rules(db: Session = Depends(get_db)):
@@ -20,6 +63,23 @@ def create_rule(payload: RuleCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(rule)
     return rule
+
+
+@router.post("/seed", response_model=list[RuleOut])
+def seed_default_rules(db: Session = Depends(get_db)):
+    """Seed standard validation rules if they don't already exist."""
+    existing_names = {r.name for r in db.query(ValidationRule).all()}
+    added_rules = []
+    for preset in DEFAULT_PRESET_RULES:
+        if preset["name"] not in existing_names:
+            rule = ValidationRule(**preset)
+            db.add(rule)
+            added_rules.append(rule)
+    if added_rules:
+        db.commit()
+        for r in added_rules:
+            db.refresh(r)
+    return db.query(ValidationRule).order_by(ValidationRule.id.desc()).all()
 
 
 @router.patch("/{rule_id}", response_model=RuleOut)

@@ -1,0 +1,32 @@
+customer_id,full_name,email,country,subscription_tier,signup_date
+CUST001,Alice Johnson,alice.j@example.com,United States,Premium,2024-01-15
+CUST002,Bob Smith,bob.smith@corp,United States,Basic,2024-01-16
+CUST003,Charlie Brown,charlie.b@test.com,united states,Enterprise,2024-01-17
+CUST004,Diana Prince,diana@themyscira.org,United Kingdom,Premium,2024-01-18
+CUST005,Evan Wright,,Canada,Basic,2024-01-19
+CUST006,Fiona Gallagher,fiona.g@shamrock.net,United States,Basic,2024-01-20
+CUST007,George Clark,george.clark@domain.com,united kingdom,Standard,2024-01-21
+CUST008,Hannah Abbott,hannah@hogwarts.edu,United Kingdom,Enterprise,2024-01-22
+CUST009,Ian Malcolm,ian@dino.org,United States,Premium,2024-01-23
+CUST010,Julia Roberts,julia@hollywood.com,United States,Enterprise,2024-01-24
+CUST011,Kevin Bacon,kevin@degrees.org,United States,Basic,2024-01-25
+CUST012,Laura Croft,laura@tombraider.com,United Kingdom,Premium,2024-01-26
+CUST013,Michael Scott,michael.scott@dundermifflin.com,United States,Standard,2024-01-27
+CUST013,Michael Scott,michael.scott@dundermifflin.com,United States,Standard,2024-01-27
+CUST014,Nancy Drew,nancy@detective.net,United States,Basic,2024-01-28
+CUST015,Oscar Martinez,oscar@accounting.com,United States,Enterprise,2024-01-29
+CUST016,Peter Parker,peter.parker@dailybugle.com,United States,Basic,2024-01-30
+CUST017,Quinn Fabray,quinn@glee.edu,united states,Standard,2024-01-31
+CUST018,Rachel Green,rachel@ralphlauren.com,United States,Premium,2024-02-01
+CUST019,Steve Rogers,steve.rogers@avengers.org,United States,Enterprise,2024-02-02
+CUST020,Tony Stark,tony@starkindustries.com,United States,Enterprise,2024-02-03
+CUST021,Uma Thurman,uma@cinema.org,United States,Basic,2024-02-04
+CUST022,Victor Stone,victor@titans.org,United States,Premium,2024-02-05
+CUST023,Wanda Maximoff,wanda@westview.gov,United States,Enterprise,2024-02-06
+CUST024,Xavier Charles,professor.x@mutants.edu,United States,Enterprise,2024-02-07
+CUST025,Yara Greyjoy,yara@ironislands.org,United Kingdom,Basic,2024-02-08
+CUST026,Zachary Levi,zach@nerd.com,United States,Standard,2024-02-09
+CUST027,,missing.name@test.com,Canada,Basic,2024-02-10
+CUST028,Arthur Dent,arthur.dent@galaxy.co.uk,United Kingdom,Standard,2024-02-11
+CUST029,Bruce Wayne,bruce@wayne.enterprise,United States,Enterprise,2024-02-12
+CUST030,Clark Kent,clark.kent@dailyplanet,United States,Basic,2024-02-13

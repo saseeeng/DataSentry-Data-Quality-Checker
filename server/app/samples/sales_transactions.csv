@@ -1,0 +1,21 @@
+transaction_id,customer_name,product_category,amount,currency,payment_status,transaction_date
+TXN-1001,Acme Corporation,Software,1499.00,USD,completed,2024-03-01
+TXN-1002,Global Logistics,Hardware,3250.50,USD,completed,2024-03-01
+TXN-1003,Starlight Media,Cloud Services,,USD,pending,2024-03-02
+TXN-1004,Apex Innovations,software,450.00,usd,completed,2024-03-02
+TXN-1005,Horizon Tech,Consulting,5200.00,USD,completed,2024-03-03
+TXN-1006,BlueSky Analytics,Software,1200.00,USD,failed,2024-03-04
+TXN-1007,Apex Innovations,Software,450.00,USD,COMPLETED,2024-03-04
+TXN-1008,Nexus Dynamics,Hardware,890.00,USD,completed,2024-03-05
+TXN-1009,Pioneer Ventures,,2100.00,USD,pending,2024-03-06
+TXN-1010,Vanguard Holdings,Consulting,7500.00,USD,completed,2024-03-06
+TXN-1011,Quantum Systems,Cloud Services,3100.00,EUR,completed,2024-03-07
+TXN-1012,Echo Logistics,hardware,1400.00,USD,completed,2024-03-08
+TXN-1013,Solaris Energy,Software,850.00,USD,refunded,2024-03-08
+TXN-1014,Zenith Labs,Consulting,4300.00,USD,completed,2024-03-09
+TXN-1014,Zenith Labs,Consulting,4300.00,USD,completed,2024-03-09
+TXN-1015,Omni Retail,,160.00,USD,pending,2024-03-10
+TXN-1016,Summit Partners,Hardware,2200.00,USD,completed,2024-03-11
+TXN-1017,Crestview Medical,Cloud Services,5900.00,USD,completed,2024-03-12
+TXN-1018,Beacon Media,Software,950.00,usd,completed,2024-03-13
+TXN-1019,Terra Nova,Consulting,3100.00,USD,completed,2024-03-14

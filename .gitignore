@@ -2,15 +2,27 @@
 server/.venv/
 server/__pycache__/
 server/.pytest_cache/
+*.pyc
+*.pyo
 
-# Secrets
+# Secrets & Environment
 .env
 server/.env
+client/.env
+client/.env.local
 
-# React
+# Databases
+*.db
+*.db-shm
+*.db-wal
+server/datasentry.db*
+data/
+
+# React & Node
 client/node_modules/
 client/dist/
 
-# Generated files
+# Uploads & Artifacts
 uploads/
+server/uploads/
 reports/

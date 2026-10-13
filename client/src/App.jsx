@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import AppShell from './components/AppShell'
+import RulesManager from './components/RulesManager'
 import AnalyzePage from './pages/AnalyzePage'
-import ReportPage from './pages/ReportPage'
 import HistoryPage from './pages/HistoryPage'
+import ReportPage from './pages/ReportPage'
 import { createScan, getScan } from './lib/api'
 
 export default function App() {
@@ -17,7 +18,8 @@ export default function App() {
     setBusy(true)
     setError('')
     try {
-      setScan(await createScan(file))
+      const newScan = await createScan(file)
+      setScan(newScan)
       setPage('report')
     } catch (err) {
       setError(err.message)
@@ -29,7 +31,8 @@ export default function App() {
   async function openScan(id) {
     setError('')
     try {
-      setScan(await getScan(id))
+      const scanData = await getScan(id)
+      setScan(scanData)
       setPage('report')
     } catch (err) {
       setError(err.message)
@@ -44,16 +47,27 @@ export default function App() {
   }
 
   return (
-    <AppShell page={page} setPage={setPage}>
-      {error && <p role="alert" className="mb-5 rounded-lg bg-red-50 p-3 text-sm text-red-700">{error}</p>}
+    <AppShell page={page} setPage={setPage} onNewScan={startNewScan}>
+      {error && (
+        <div role="alert" className="mb-5 rounded-xl border border-rose-200 bg-rose-50 p-4 text-xs font-medium text-rose-700 shadow-2xs">
+          {error}
+        </div>
+      )}
       {page === 'analyze' && (
-        <AnalyzePage file={file} setFile={setFile} setPage={setPage}
-          onAnalyze={handleAnalyze} busy={busy} onOpenScan={openScan} />
+        <AnalyzePage
+          file={file}
+          setFile={setFile}
+          setPage={setPage}
+          onAnalyze={handleAnalyze}
+          busy={busy}
+          onOpenScan={openScan}
+        />
       )}
       {page === 'report' && scan && (
         <ReportPage scan={scan} onNewScan={startNewScan} />
       )}
       {page === 'history' && <HistoryPage onOpenScan={openScan} />}
+      {page === 'rules' && <RulesManager />}
     </AppShell>
   )
 }
